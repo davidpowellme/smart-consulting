@@ -1,0 +1,959 @@
+/*
+Theme Name: BlankSlate
+Theme URI: http://wordpress.org/themes/blankslate
+Author: TidyThemes
+Author URI: http://tidythemes.com/
+Description: <strong>UPDATE</strong> - 4.0+ is here, completely overhauled, yet again. As always, <a href="http://tidythemes.com/concept/#upgrading">use caution when upgrading</a> (tidythemes.com/concept/#upgrading) and <a href="http://tidythemes.com/concept/">learn the TidyThemes concept</a> (tidythemes.com/concept). &nbsp; &rarr; <em><strong>CAUTION</strong>: If you're child theming or have clients that are child theming on top of BlankSlate (not the recommended use), please do not blindly upgrade to newer versions.</em> &nbsp; &rarr; <strong>DESCRIPTION</strong>: BlankSlate is the definitive WordPress HTML5 boilerplate starter theme. We've carefully constructed the most clean and minimalist theme available anywhere for designers/developers to use as a base/foundation to build websites for clients or to build completely custom themes from scratch to release faster. Clean, semi-minified, unformatted and valid code, SEO-friendly, no programmer comments, standardized and as white label as possible and most importantly, CSS reset for cross-browser-compatability and no intrusive visual CSS styles added whatsoever. A perfect skeleton theme that blows any others like it (the subsequent underscores.me for example) completely out of the water, as they're simply too overcomplicated for what people really want in this kind of theme. Now comes with jQuery enqueued and ready to go. &nbsp; &rarr; <strong>SUPPORT</strong>: Please use the <a href="http://tidythemes.com/forum/">official support forum</a> (tidythemes.com/forum). Comments and suggestions for improving BlankSlate, please see "<a href="http://tidythemes.com/tidythemes-sucks/">TidyThemes Sucks!</a>" (tidythemes.com/tidythemes-sucks). Just getting started? <a href="http://tidythemes.com/want-to-learn-css/">Want to learn CSS?</a> (tidythemes.com/want-to-learn-css) &nbsp; &rarr; <strong>WHAT'S NEW?</strong>: We stripped down as much custom, extraneous, superfluous junk code as we could and greatly improved the HTML5 structure. <a href="http://make.wordpress.org/themes/author/chipbennett/">Chip Bennett</a> (make.wordpress.org/themes/author/chipbennett), a highly experienced programmer and official WordPress administrator, worked closely with us to audit the theme code for quality. <a href="http://themes.trac.wordpress.org/changeset?old_path=/blankslate/3.3&new_path=/blankslate/4.0">See</a> (themes.trac.wordpress.org/changeset?old_path=/blankslate/3.3&new_path=/blankslate/4.0) just how much we've revamped things. Last, but not least, BlankSlate has now been <a href="https://github.com/tidythemes/blankslate">opened up on GitHub</a> (github.com/tidythemes/blankslate) if anyone would like to make suggested code additions/improvements. Thank you for using BlankSlate.
+Version: 4.0.3
+License: GNU General Public License
+License URI: https://www.gnu.org/licenses/gpl.html
+Tags: black, blue, white, light, one-column, fluid-layout, responsive-layout, custom-menu, featured-images, microformats, sticky-post, threaded-comments, translation-ready
+Text Domain: blankslate
+
+BlankSlate WordPress Theme © 2011-2015 TidyThemes
+BlankSlate is distributed under the terms of the GNU GPL
+*/
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{font-size:100%;font:inherit;padding:0;border:0;margin:0;vertical-align:baseline}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}.clear{clear:both}
+.sticky{}.bypostauthor{}.wp-caption{}.wp-caption-text{}.gallery-caption{}.alignright{}.alignleft{}.aligncenter{}.screen-reader-text{clip:rect(1px, 1px, 1px, 1px);position:absolute !important}
+
+/*
+GLOBAL
+=======
+*/
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+img {max-width: 100%;}
+
+#sidebar,
+.post-edit-link {display: none;}
+
+h1 {
+	font-size: 2em;
+	margin: 0.5em 0;
+	text-transform: uppercase;
+}
+h2 {
+	font-size: 1.5em;
+	text-transform: uppercase;
+}
+
+h3 {
+	font-size: 1.25em;
+	text-transform: uppercase;
+}
+
+
+
+h1,
+h2,
+h3,
+#wprmenu_bar .menu_title {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 700;
+	line-height: 1.3;
+	text-transform: uppercase;
+}
+
+p {
+	line-height: 1.5;
+	margin-bottom: 0.5em
+}
+
+a {
+	color: #064789;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #4ab2b2;
+	cursor: pointer;
+}
+
+ul {
+	list-style: square;
+	margin: 1em;
+}
+
+ul li {
+	line-height: 1.5;
+}
+
+blockquote {
+	color: #333;
+	font-style: italic;
+	font-size: 1.25em;
+	margin: 0.5em 2em 0.5em 2em;
+}
+
+blockquote:before {
+	content: " ";
+	background: url(http://smart.die4pie.com/wp-content/uploads/2016/08/quotes.png) 0 0 no-repeat;
+	background-size: cover;
+	display: block;
+	height: 50px;
+	margin: -20px 0 0 -20px;
+	opacity: 0.4;
+	position: absolute;
+	width: 60px;
+	z-index: -1;
+}
+
+
+i {
+	font-size: 2em
+}
+
+.fa {
+	color: #fff;
+}
+
+a .fa {
+	margin-right: 1em;
+}
+
+a .fa:hover {color: #4ab2b2;}
+
+#pl-2 .panel-grid {z-index: 1;}
+
+
+/*
+BUTTON
+=======
+*/
+
+.button-wrapper {
+	margin: -3em auto 0 auto;
+	width: 85%;
+}
+
+a.button {
+	cursor: pointer;
+	margin: 1em 0;
+	padding: 1em 2em;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+}
+
+.dark {
+	background: #064789;
+	color: #fff;
+}
+
+.dark:hover {
+	background: transparent;
+	border: 4px solid #064789;
+	color: #064789;
+}
+
+.light {
+	background: #fff;
+	color: #064789;
+}
+
+.light:hover {
+	background: transparent;
+	border: 4px solid #fff;
+}
+
+
+/*
+HEADER
+=======
+*/
+
+#header {
+	overflow: hidden;
+}
+
+#site-title {display: none;} 
+
+
+#search {display: none;}
+
+
+
+/*
+HOME
+=====
+*/
+
+/*.home #header {
+	background: transparent;
+	margin-bottom: -90px;
+	padding: 1.5em;
+	z-index: 2;
+}*/
+
+.home .entry-title {display: none;}
+
+
+#home-1 {
+	background: url(http://smart.die4pie.com/wp-content/uploads/2016/08/anthony-nixon.jpg) 0 0 no-repeat;
+	background-size: cover;
+	background-position: center;
+	color: #064789;
+	position: relative;
+	z-index: -1;
+}
+
+#home-1:after {
+	content: " ";
+	background: #fff;
+	height: 100%;
+	left: 0;
+	opacity: 0.7;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: -2;
+}
+
+
+#home-2 {
+	background: url(http://smart.die4pie.com/wp-content/uploads/2016/08/dee-combine-crop.jpg) 0 0 no-repeat;
+	background-size: cover;
+	color: #fff;
+	position: relative;
+	z-index: -1;
+}
+
+#home-2:after {
+	content: " ";
+	background: #064789;
+	height: 100%;
+	left: 0;
+	opacity: 0.7;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+#home-3 {
+	background: url(http://smart.die4pie.com/wp-content/uploads/2016/08/training-mask-shot.jpg) 0 0 no-repeat;
+	background-size: cover;
+	color: #064789;
+	position: relative;
+	z-index: -1;
+}
+
+#home-3:after {
+	content: " ";
+	background: #fff;
+	height: 100%;
+	left: 0;
+	opacity: 0.7;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+#home-1,
+#home-2,
+#home-3 {
+	height: 90vh;
+	margin-bottom: 0 !important;
+}
+
+#contact {
+	background: #0a2342;
+	color: #fff;
+	min-height: 90vh;
+}
+
+.one,
+.two,
+.three {
+	margin: 0 auto;
+	padding: 5em 0;
+	width: 85%;
+}
+
+.hero-testimonial {z-index: 1;}
+
+.hero-testimonial:before {
+	content: " ";
+	background: url(http://smart.die4pie.com/wp-content/uploads/2016/08/hero-quotes-1.png) 0 0 no-repeat;
+	background-size: cover;
+	display: block;
+	height: 50px;
+	margin: -15px 0 0 -10px;
+	position: absolute;
+	width: 60px;
+	z-index: -1;
+}
+
+.image-home {display: none;}
+
+
+.one {
+	padding-top: 8em;
+}
+
+.one h1,
+.one p {
+	max-width: 650px;
+}
+
+.contact-left,
+.contact-right {
+	margin: 0 auto;
+	padding: 2em 0;
+	width: 85%;
+}
+
+.contact-right a {
+	color: #fafafa;
+	text-decoration: underline;
+}
+
+.contact-right a:hover {color: #4ab2b2;}
+
+.smart-photo {
+	border-radius: 50%;
+	height: 300px;
+	margin: 1.5em auto 0 auto;
+	width: 300px;
+}
+
+.social {
+	margin: 0 auto;
+	width: 300px;
+}
+
+/*
+CLIENTS
+========
+*/
+
+.client {
+	height: 250px;
+	margin: 0 auto -35px auto;
+	padding: 1em 0 0 1em;
+	width: 250px;
+}
+
+.nixon {
+	background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/anthony-nixon-Detriot-Lions.jpg) 0 0 no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.weatherd {
+	background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/Chris-Weatherd-New-Orleans-Saints.jpg) 0 0 no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.burns {
+	background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/Morgan-burns-Tennessee-titans.jpg) 0 0 no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.cockran {
+	background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/Theiren-Cockran-Minnesota-Vikings.jpg) 0 0 no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.semisch {
+	background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/tim-semisch-Miami-Dolphins.jpg) 0 0 no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.mccullum {
+	background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/Dasman-McCullum-Washington-Redskins.jpg) 0 0 no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.hart {
+	background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/Dee-Hart-Miami-Dolphins.jpg) 0 0 no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.vaeao {
+	background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/Destiny-Vaeao-Philadelphia-Eagles.jpg) 0 0 no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.johnson {
+	background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/Dezmond-Johnson-Tennessee-Titans.jpg) 0 0 no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.lowe {
+	background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/duran-lowe-jacksonville-jaguars.jpg) 0 0 no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.siliva {
+	background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/iosua-siliva-indianapolis-colts.jpg) 0 0 no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.tuiasosopo {
+	background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/Isaiah-Tuiasosopo-Carolina-panthers.jpg) 0 0 no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.milstead {
+	background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/Christian-milstead-green-bay-Packers.jpg) 0 0 no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.mccloud {
+	background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/Cameron-McCleod-Houston-Texans.jpg) 0 0 no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+
+
+.client h1,
+.client h2 {
+	display: none;
+}
+
+.info {
+	background: #ededed;
+	margin-top: 0;
+	width: 250px !important;
+	padding: 0.75em 1em;
+}
+
+.info h1 {
+	font-size: 1.25em;
+	margin: 0;
+}
+.info h2 {
+	font-size: 1em;
+	margin: 0.5em 0 0 0;
+}
+
+
+
+
+
+/*
+CONTENT
+========
+*/
+
+.entry-title {
+	background: #427aa1;
+	color: #fff;
+	font-size: 1.5em;
+	padding: 0.75em 1em;
+}
+
+
+.content-wrapper {
+	padding: 2em 0 4em 0;
+}
+
+.other-content {
+	margin: 0 auto;
+	max-width: 900px;
+	width: 85%;
+}
+
+.other-content:first-child {margin-top: 2em;}
+
+.other-content h1,
+.other-content h2,
+.other-content h3,
+.other-content p,
+.other-content ul {
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 700px;
+}
+
+.other-content ul {
+	padding-left: 1.5em;
+}
+
+.testimonial {
+	color: #333;
+	font-style: italic;
+	font-size: 1.5em;
+	margin-top: 2em;
+	z-index: 1;
+}
+
+.testimonial:before {
+	content: " ";
+	background: url(http://smart.die4pie.com/wp-content/uploads/2016/08/quotes.png) 0 0 no-repeat;
+	background-size: cover;
+	display: block;
+	height: 50px;
+	margin: -30px 0 0 -20px;
+	opacity: 0.4;
+	position: absolute;
+	width: 60px;
+	z-index: -1;
+}
+
+.testimonial-image {
+	background: url(http://smart.die4pie.com/wp-content/uploads/2016/08/dez-42-225x300.jpg) 0 0 no-repeat;
+	background-size: cover;
+	border-radius: 50%;
+	height: 200px;
+	width: 200px;
+}
+
+/*
+FOOTER
+=======
+*/
+
+#footer {
+	background: #0a2342;
+	color: #fff;
+	margin: -4px -4%;
+	padding: 3em;
+	text-align: center;
+}
+
+
+
+/*
+RESPONSIVE STYLES
+==================
+*/
+
+@media (min-width: 750px) {
+
+
+/*	.home #header {
+		margin-bottom: -120px;
+	}*/
+
+	.home h1 {font-size: 3.5em;}
+
+	.two {
+		padding-top: 2em;
+	}
+
+	#home-3 {
+		background: #fff;
+	}
+	#home-2 {
+		background: #064789;
+	}
+
+	.entry-title {padding-left: 2em;}
+
+}
+
+
+@media (min-width: 780px) {
+
+
+	.image-home {
+		background: url(http://smart.die4pie.com/wp-content/uploads/2016/08/dee-combine-crop.jpg) 0 0 no-repeat;
+		background-size: cover;
+		background-position: center;
+		display: block;
+		height: 90vh;
+		width: 100%;
+	}
+
+	.image-home-2 {
+		background: url(http://smart.die4pie.com/wp-content/uploads/2016/08/training-mask-shot.jpg) 0 0 no-repeat;
+		background-size: cover;
+		background-position: center;
+		display: block;
+		height: 90vh;
+		width: 100%;
+	}
+
+	.image-home:after {
+		content: " ";
+		border-bottom: 90vh solid #064789;
+		border-left: 40px solid transparent;
+		height: 90vh;
+		right: 60%;
+		bottom: 0;
+		position: absolute;
+		width: 30px;
+	}
+
+	.image-home-2:before {
+		content: " ";
+		border-bottom: 87.45vh solid #fff;
+		border-right: 40px solid transparent;
+		height: 90vh;
+		left: 0;
+		bottom: 0;
+		position: relative;
+		width: 30px;
+	}
+
+	.testimonial {
+		margin-top: 2em;
+		padding: 0.5em 1em;
+	}
+
+	.hero-testimonial:before {
+		height: 80px;
+		margin: -10px 0 0 -40px;;
+		width: 100px;
+	}
+
+}
+
+@media (min-width: 715px) and (max-width: 860px) {
+	.client {
+		height: 200px;
+		width: 200px;
+	}
+
+	.info {
+		width: 200px !important;
+	}
+}
+
+@media (min-width: 900px) {
+
+	.info {display: none;}
+
+	.client {
+	  position: relative;
+	  background: rgba(0,0,0,0);
+	  background-size: cover;
+	  color: transparent;
+	  transition: background-color 1s;
+	  transition: color 1s;
+	}
+
+	.client h1,
+	.client h2 {
+		position: absolute;
+		display: block;
+	}
+
+	.client h1 {font-size:1.6em;}
+
+	.client h2 {
+		font-size: 1.25em;
+		top: 70px;
+	}
+
+	.client:hover {
+	  color: white;
+	  background-color: rgba(6,71,137, 0.8);
+	}
+
+
+	.client:before {
+	  position: absolute;
+	  top: 0; right: 0; bottom: 0; left: 0;
+	  background-color: inherit;
+	  content: ' ';
+	}
+
+	.nixon {
+	background: rgba(0,0,0,0) url(http://smart.die4pie.com/wp-content/uploads/2016/09/anthony-nixon-Detriot-Lions.jpg) 0 0 no-repeat;
+	background-position: center;
+	background-size: cover;
+	}
+
+	.weatherd {
+		background: rgba(0,0,0,0) url(http://smart.die4pie.com/wp-content/uploads/2016/09/Chris-Weatherd-New-Orleans-Saints.jpg) 0 0 no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	.burns {
+		background: rgba(0,0,0,0) url(http://smart.die4pie.com/wp-content/uploads/2016/09/Morgan-burns-Tennessee-titans.jpg) 0 0 no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	.cockran {
+		background: rgba(0,0,0,0) url(http://smart.die4pie.com/wp-content/uploads/2016/09/Theiren-Cockran-Minnesota-Vikings.jpg) 0 0 no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	.semisch {
+		background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/tim-semisch-Miami-Dolphins.jpg) 0 0 no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	.mccullum {
+		background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/Dasman-McCullum-Washington-Redskins.jpg) 0 0 no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	.hart {
+		background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/Dee-Hart-Miami-Dolphins.jpg) 0 0 no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	.vaeao {
+		background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/Destiny-Vaeao-Philadelphia-Eagles.jpg) 0 0 no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	.johnson {
+		background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/Dezmond-Johnson-Tennessee-Titans.jpg) 0 0 no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	.lowe {
+		background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/duran-lowe-jacksonville-jaguars.jpg) 0 0 no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	.siliva {
+		background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/iosua-siliva-indianapolis-colts.jpg) 0 0 no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	.tuiasosopo {
+		background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/Isaiah-Tuiasosopo-Carolina-panthers.jpg) 0 0 no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	.milstead {
+		background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/Christian-milstead-green-bay-Packers.jpg) 0 0 no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	.mccloud {
+		background: url(http://smart.die4pie.com/wp-content/uploads/2016/09/Cameron-McCleod-Houston-Texans.jpg) 0 0 no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	blockquote:before {
+		margin: -25px 0 0 40px;}
+}
+
+@media (min-width: 961px) {
+
+	.home #header {
+		margin-bottom: -90px;
+		padding: 1em 3em;
+		position: relative;
+		width: 100%;
+		z-index: 5;
+	}
+
+	#header {padding: 1em 3em;}
+
+	#wprmenu_bar {display: none;}
+
+	#branding {
+		float: left;
+		margin: 0;
+		width: 49%;
+	}
+
+	#branding a {
+		color: #064789;
+		font-family: 'Open Sans Condensed', sans-serif;
+		font-weight: 700;
+		font-size: 1.75em;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+
+	#branding h1 {font-size: 1em !important;}
+	
+	#site-title {display: block;}
+
+	#menu {
+		clear: both;
+		float: right;
+		margin-top: -1.25em;
+		overflow: hidden;
+		width: 50%;
+	}
+
+	.home #menu {
+		margin-top: -2.5em;
+	}
+
+	#menu ul {
+		float: right;
+		margin: 0;
+	}
+
+	#menu li {
+		display: inline-block;
+		margin-right: 1em;
+	}
+
+	#menu li:last-child {margin-right: 0;}
+
+	#menu li a {
+		color: #064789;
+		font-weight: bold;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+
+	#menu li a:hover {
+		border-bottom: 2px solid #064789;
+	}
+
+	.two {padding-top: 5em;}
+
+	#contact {
+		padding: 5em 10%;
+	}
+
+}
+
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
